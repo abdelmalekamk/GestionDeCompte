@@ -10,7 +10,7 @@ import com.training.spring.entities.Contact;
 
 public interface ContactRepository extends JpaRepository<Contact, Long>{
 
-	@Query("SELECT c FROM contact c where c.com like :x")
+	/* @Query("SELECT c FROM contact c where c.nom like :x")
 	public Page<Contact> chercher(@Param("x")String mc,Pageable pageable);
-		
+		*/
 }

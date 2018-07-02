@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,13 +25,13 @@ public class ContactRestService {
 		return contactRespository.findAll();
 	}
 	  
-	@RequestMapping(value="/chercherContacts",method=RequestMethod.GET)
+	/*@RequestMapping(value="/chercherContacts",method=RequestMethod.GET)
 	public Page<Contact> chercher(
 			@RequestParam(name="mc" ,defaultValue="") String mc,
 			@RequestParam(name="page" ,defaultValue="0") int page,
 			@RequestParam(name="size" ,defaultValue="5") int size){
-		return null;
-	}
+		return contactRespository.chercher("%"+mc+"%", PageRequest.of( page,size));
+	}*/
 	
 	@RequestMapping(value="/contacts/{id}",method=RequestMethod.GET)
 	public Optional<Contact> getContatc(@PathVariable Long id){
